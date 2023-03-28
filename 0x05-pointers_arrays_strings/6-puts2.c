@@ -15,7 +15,7 @@ void puts2(char *str)
 	while (*y != '\0')
 	{
 		y++;
-		long++;
+		longi++;
 	}
 	t = longi - 1;
 	for (o = 0 ; o <= t ; o++)
@@ -25,5 +25,5 @@ void puts2(char *str)
 		_putchar(str[0]);
 	}
 	}
-	_putchar('\n')
+	_putchar('\n');
 }

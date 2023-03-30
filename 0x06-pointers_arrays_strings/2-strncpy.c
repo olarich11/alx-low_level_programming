@@ -2,8 +2,11 @@
 #include <unistd.h>
 #include <unistd.h>
 
+
+
 /**
- * _strncpy- function that copies a string.
+ * _strncpy- copies at most an inputed number
+ * of bytes from string src into dest
  * @dest: The buffer storing the string copy
  * @src: The source string
  * @n: The maximum number of bytes to copy from src

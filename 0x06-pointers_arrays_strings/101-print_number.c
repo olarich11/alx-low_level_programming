@@ -1,6 +1,8 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
+ * root
  * print_number- print numbers chars
  * @n: integer params
  * Return: 0

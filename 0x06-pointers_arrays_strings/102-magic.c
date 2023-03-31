@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 /**
-*main - YOUR DESCRIPTION HERE
-*Return: THE RETURNED VALUE (ZERO OR WHATEVER)
+*main - program prints a[2] = 98
+*Return: 0
 */
 int main(void)
 {

@@ -55,7 +55,7 @@ char *_strcpy(char *dest, char *src)
  * @age: age of the dog
  * @owner: owner od the dog
  *
- * Return: pointer to the dog (Success), NULL
+ * Return: pointer to the dog (Success), NULL otherwise
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
@@ -64,6 +64,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	len1 = _strlen(name);
 	len2 = _strlen(owner);
+
 	dog = malloc(sizeof(dog_t));
 	if (dog == NULL)
 		return (NULL);

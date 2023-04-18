@@ -22,7 +22,7 @@ int _strlen(char *s)
 }
 
 /**
- * _strcpy- copy the string pointed to src
+ * _strcpy- copies the string pointed to src
  * including the terminating null byte (\0)
  * to the buffer pointed to by the dest
  * @dest: pointer to the buffer in which we can copy the string
@@ -40,7 +40,8 @@ char *_strcpy(char *dest, char *src)
 	{
 		len++;
 	}
-	for(i = 0; i < len; i++)
+
+	for (i = 0; i < len; i++)
 	{
 		dest[i] = src[i];
 	}
@@ -55,7 +56,7 @@ char *_strcpy(char *dest, char *src)
  * @age: age of the dog
  * @owner: owner od the dog
  *
- * Return: pointer to the dog (Success), NULL otherwise
+ * Return: pointer to the new dog (Success), NULL otherwise
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
@@ -64,7 +65,6 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	len1 = _strlen(name);
 	len2 = _strlen(owner);
-
 	dog = malloc(sizeof(dog_t));
 	if (dog == NULL)
 		return (NULL);

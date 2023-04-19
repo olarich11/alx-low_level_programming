@@ -17,7 +17,6 @@ int main(int argc, char *argv[])
 	{
 		printf("Error\n");
 		exit(1);
-
 	}
 
 	bytes = atoi(argv[1]);

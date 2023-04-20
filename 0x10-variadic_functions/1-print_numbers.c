@@ -7,31 +7,22 @@
  * @separator: The string to be printed between strings
  * @n: The number of strings passed to the function
  * @...: A vairable number of a strinfs to be printed
- *
- * Description: if separator is NULL, it is not printed
- * if one of the strings if NULL, (nil) is printed instead
  */
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
-	va_list strings;
-	char *str;
+	va_list nums;
 	unsigned int index;
 
-	va_start(strings, n);
+	va_start(nums, n);
 
 	for (index = 0; index < n; index++)
 	{
-		str = va_arg(strings, char *);
-
-		if (str == NULL)
-			printf("nil)");
-		else
-			printf("%s", str);
+		printf("%d",  va_arg(nums, int));
 
 		if (index != (n - 1) && separator != NULL)
 			printf("%s", separator);
 	}
 	printf("\n");
 
-	va_end(strings);
+	va_end(nums);
 }

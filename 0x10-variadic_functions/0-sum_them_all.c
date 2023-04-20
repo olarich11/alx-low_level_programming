@@ -6,7 +6,7 @@
  * @n: The number of parameters passed to the function
  * @...: A variable number of parameter to calculate the sum of
  *
- * Retrun: If n == 0 - 0.
+ * Return: If n == 0 - 0.
  * otherwise - the sum of all parameters
  */
 int sum_them_all(const unsigned int n, ...)

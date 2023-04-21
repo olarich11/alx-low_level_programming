@@ -36,15 +36,16 @@ void print_all(const char * const format, ...)
 						str = "(nil)";
 					printf("%s%s", sep, str);
 					break;
-			
+
 				default:
-				i++;
-				continue;
-		}
-		sep = ", ";
-		i++;
-	}
+					i++;
+					continue;
 			}
-		printf("\n");
-		va_end(list);
+			sep = ", ";
+			i++;
+
+		}
+	}
+	printf("\n");
+	va_end(list);
 }

@@ -9,14 +9,15 @@
  */
 size_t print_listint(const listint_t *h)
 {
-	const listint_t *cursor = h;
-	size_t cod = 0;
+	const listint_t *mouse;
+	unsigned int cod = 0;
 
-	while (cursor != NULL)
+	mouse = h;
+	while (mouse)
 	{
-		printf("%d\n", cursor->n);
-		cod += 1;
-		cursor = cursor->next;
+		printf("%d\n", mouse->n);
+		cod++;
+		mouse = mouse->next;
 	}
 	return (cod);
 }

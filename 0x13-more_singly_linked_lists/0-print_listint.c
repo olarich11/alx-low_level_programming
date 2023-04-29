@@ -3,19 +3,20 @@
 /**
  * print_listint- Function that prints all the
  * elements of a listint_t list.
- * @h: List of type listint_t to print
+ * @h: List of type
  *
  * Return: nos of nodes
  */
 size_t print_listint(const listint_t *h)
 {
-	size_t num = 0;
+	const listint_t *cursor = h;
+	size_t cod = 0;
 
-	while (h)
+	while (cursor != NULL)
 	{
-		printf("%d\n", h->n);
-		num++;
-		h = h->next;
+		printf("%d\n", cursor->n);
+		cod += 1;
+		cursor = cursor->next;
 	}
-	return (num);
+	return (cod);
 }

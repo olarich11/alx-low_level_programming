@@ -9,7 +9,7 @@
  */
 size_t print_listint(const listint_t *h)
 {
-	const listint_t *mouse;
+	const listint_t *mouse = mouse;
 	unsigned int cod = 0;
 
 	mouse = h;

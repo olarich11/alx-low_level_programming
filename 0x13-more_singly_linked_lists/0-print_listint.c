@@ -5,7 +5,7 @@
  * of a listint_t list.
  * @h: Listing of type listint_t to print
  *
- * Return: Nos of nodes
+ * Return: The number of nodes
  */
 size_t print_listint(const listint_t *h)
 {

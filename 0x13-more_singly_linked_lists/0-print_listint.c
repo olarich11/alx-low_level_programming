@@ -15,8 +15,8 @@ size_t print_listint(const listint_t *h)
 	mouse = h;
 	while (mouse)
 	{
-		printf("%d\n", mouse->n);
 		cod++;
+		printf("%d\n", mouse->n);
 		mouse = mouse->next;
 	}
 	return (cod);

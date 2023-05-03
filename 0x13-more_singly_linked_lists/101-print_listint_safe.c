@@ -1,50 +1,65 @@
+#include <stdio.h>
 #include "lists.h"
-#include <stdlib.h>
 
 /**
- * print_listint_safe- Function that prints a listint_t linked list.
- * @head: Pointer that point to the head of the list.
+ * _r- Re-allocated memory in an array pointed to the
+ * nodes in a linked list
+ * @list: Old(list) to be appended
+ * @size: The sizes of the new list
+ * @new: List to be added to the new node
  *
- * Return: The number of nodes in the list.
+ * Return: The Pointer to the new list
+ */
+const listint_t **_r(const listint_t **list, size_t size, const listint_t *new)
+{
+	const listint_t **newpage;
+	size_t k;
+
+	newpage = malloc(size * sizeof(listint_t *));
+
+	if (newpage == NULL)
+	{
+		free(list);
+		exit(98);
+	}
+
+	for (k = 0; k < size - 1; k++)
+		newpage[k] = list[k];
+	newpage[k] = new;
+	free(list);
+
+	return (newpage);
+}
+/**
+ * print_listint_safe- Function that prints a
+ * listint_t linked list.
+ * @head: The pointer to the start on the list
+ *
+ * Return: Number of nodes
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	size_t plus = 0;
-
-	const listint_t *slow = head, *fast = head;
-
-	while (slow != NULL && fast != NULL && fast->next != NULL)
-	{
-		slow = slow->next;
-		fast = fast->next->next;
-
-		printf("[%p] %i\n", (void *)slow, slow->n);
-		plus++;
-
-		if (slow == fast)
-		{
-			printf("[%p] %i\n", (void *)slow, slow->n);
-			plus++;
-
-			head = head->next;
-
-			while (head != slow)
-			{
-				printf("[%p] %i\n", (void *)head, head->n);
-				plus++;
-				head = head->next;
-			}
-
-			exit(98);
-		}
-	}
+	size_t j, imei = 0;
+	const listint_t **list = NULL;
 
 	while (head != NULL)
 	{
-		printf("[%p] %i\n", (void *)head, head->n);
-		plus++;
-		head = head->next;
-	}
+		for (j = 0; j < imei; j++)
+		{
+			if (head == list[j])
+			{
+			printf("-> [%p] %d\n", (void *)head, head->n);
+			free(list);
 
-	return (plus);
+			return (imei);
+		}
+	}
+	imei++;
+	list = _r(list, imei, head);
+	printf("[%p] %d\n", (void *)head, head->n);
+	head = head->next;
+	}
+	free(list);
+
+	return (imei);
 }

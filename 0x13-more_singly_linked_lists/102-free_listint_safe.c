@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "lists.h"
 
 /**
@@ -8,37 +9,34 @@
  */
 size_t free_listint_safe(listint_t **h)
 {
-	size_t fdom = 0;
+	listint_t *next, *loopnode;
+	size_t nums;
 
-	int diff;
+	int loop = 1;
 
-	listint_t *temp;
-
-	if (!h || !*h)
+	if (h == NULL || *h == NULL)
 		return (0);
 
-	while (*h)
+	loopnode = find_listint_loop(*h);
+	for (nums = 0; (*h != loopnode || loop) && *h != NULL; *h = next)
 	{
-		diff = *h - (*h)->next;
+		nums++;
+		next = (*h)->next;
 
-		if (diff > 0)
+		if (*h == loopnode && loop)
 		{
-			temp = (*h)->next;
-			free(*h);
-			*h = temp;
-			fdom++;
+			if (loopnode == loopnode->next)
+			{
+				free(*h);
+				break;
+			}
+			nums++;
+			next = next->next;
+			free((*h)->next);
+			loop = 0;
 		}
-
-		else
-		{
-			free(*h);
-			*h = NULL;
-			fdom++;
-			break;
-		}
+		free(*h);
 	}
-
 	*h = NULL;
-
-	return (fdom);
+	return (nums);
 }

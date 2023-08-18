@@ -2,8 +2,8 @@
 
 largest_palindrome = 0
 
-for k in range(100, 1000):
-    for p in range(100, 1000):
+for k in range(999, 99, -1):
+    for p in range(p, 99, -1):
         product = k * p
         if is_palindrome(product) and product > largest_palindrome:
             largest_palindrome = product

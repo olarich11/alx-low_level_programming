@@ -9,6 +9,6 @@ for factor1 in range(100, 1000):
             if product > largest_palindrome:
                 largest_palindrome = product
 
-with open("102-result", "w") as file:
+with open("102-result", "w"):
     file.write(str(largest_palindrome))
 

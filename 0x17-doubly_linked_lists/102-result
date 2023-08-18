@@ -9,7 +9,7 @@ for k in range(999, 99, -1):
             largest_palindrome = product
             return largest_palindrome
 
-        result = find_largest_palindrom()
+        result = find_largest_palindrome()
 
 # saved result in the file
 with open("102-result", "w") as file:

@@ -5,7 +5,7 @@
  *
  * @h: The pointer head of the list
  * @idx: Index of the new node
- * @n: vThe alue of the new node
+ * @n: The alue of the new node
  * Return: The address of the new node, or NULL if it failed
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
@@ -42,7 +42,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 				new_node = add_dnodeint_end(h, n);
 			}
 
-			els
+			else
 			{
 				new_node = malloc(sizeof(dlistint_t));
 	
@@ -60,8 +60,6 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
             iterator = iterator->next;
             i++;
         }
-    }
-
-    return new_node;
+	return (new_node);
 }
 

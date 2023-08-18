@@ -10,5 +10,3 @@ for i in range(100, 1000):
 
 with open("102-result.txt", "w") as file:
     file.write(str(largest_palindrome))
-
-print("The largest palindrome:", largest_palindrome)

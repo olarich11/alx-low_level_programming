@@ -1,5 +1,4 @@
 0x1E. C - Search Algorithms
-
 Tasks
 0. Linear search
 mandatory
@@ -12,6 +11,7 @@ And value is the value to search for
 Your function must return the first index where value is located
 If value is not present in array or if array is NULL, your function must return -1
 Every time you compare a value in the array to the value you are searching, you have to print this value (see example below)
+
 
 1. Binary search
 mandatory
@@ -62,6 +62,20 @@ Every time you compare a value in the array to the value you are searching for, 
 #advanced
 What is the time complexity (average case) of a jump search in an array of size n, using step = sqrt(n)?
 
+9. Interpolation search
+#advanced
+Write a function that searches for a value in a sorted array of integers using the Interpolation search algorithm
+
+Prototype : int interpolation_search(int *array, size_t size, int value);
+Where array is a pointer to the first element of the array to search in
+size is the number of elements in array
+And value is the value to search for
+Your function must return the first index where value is located
+You can assume that array will be sorted in ascending order
+If value is not present in array or if array is NULL, your function must return -1
+To determine the probe position, you can use : size_t pos = low + (((double)(high - low) / (array[high] - array[low])) * (value - array[low]))
+Every time you compare a value in the array to the value you are searching, you have to print this value (see example below)
+
 10. Exponential search
 #advanced
 Write a function that searches for a value in a sorted array of integers using the Exponential search algorithm
@@ -100,15 +114,23 @@ You might think that linear search is not as effective as any other algorithm, r
 
 Please define the following data structure in your search_algos.h header file:
 
+
 13. Linear search in a skip list
 #advanced
 As you see now, looking for a specific value in a singly linked list always leads to browse every element of the list. A common way to optimize the time complexity of a search in a singly linked list is to modify the list itself by adding an “express lane” to browse it. A linked list with an express lane is called a skip list. This change does not come without consequences. Indeed, the space complexity of a search in this kind of list will grow as sizeof(skiplist_t) > sizeof(listint_t) (see example below).
 
 Please define the following data structure in your search_algos.h header file:
 
+
 14. Big O #6
 #advanced
 What is the time complexity (average case) of a jump search in a singly linked list of size n, using step = sqrt(n)?
+
+Repo:
+
+GitHub repository: alx-low_level_programming
+Directory: 0x1E-search_algorithms
+File: 107-O
 
 15. Big O #7
 #advanced
